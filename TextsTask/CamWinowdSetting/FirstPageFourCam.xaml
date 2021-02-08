@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TextsTask.CamWinowdSetting.FirstPageFourCam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TextsTask.CamWinowdSetting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <UniformGrid  Margin="0,25,0,0" MinHeight="100" MinWidth="100">
+            <Image Source="C:\Users\mykol\source\repos\TextsTask\TextsTask\Без Названия.jfif">
+            </Image>
+            <UniformGrid>
+                <Image Source="C:\Users\mykol\source\repos\TextsTask\TextsTask\Без Названия (1).jfif"></Image>
+            </UniformGrid>
+            <UniformGrid>
+                <Image Source="C:\Users\mykol\source\repos\TextsTask\TextsTask\Без названия (3).jfif"></Image>
+            </UniformGrid>
+            <UniformGrid >
+                <Image Source="C:\Users\mykol\source\repos\TextsTask\TextsTask\Без Названия (2).jfif"></Image>
+            </UniformGrid>
+        </UniformGrid>
+    </Grid>
+</UserControl>

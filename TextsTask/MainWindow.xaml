@@ -1,0 +1,84 @@
+﻿<Window x:Class="TextsTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:ListPage="clr-namespace:TextsTask" xmlns:ListPage1="clr-namespace:TextsTask.CreateChanel" xmlns:ListPage2="clr-namespace:TextsTask.CamWinowdSetting"
+        Height="450" Width="1000">
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Плитка">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="77*"/>
+                        <ColumnDefinition Width="911*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListPage2:FirstPageFourCam Margin="0,0,0,3.6" Grid.ColumnSpan="2"></ListPage2:FirstPageFourCam>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,3.6" Grid.ColumnSpan="2">
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Список">
+                <ListPage:UserControl1/>
+            </TabItem>
+            <TabItem Header="Белый список"></TabItem>
+            <TabItem Header="Настройки">
+                <TabControl  HorizontalContentAlignment="Left" TabStripPlacement="Left" Margin="5,5,5,5" RenderTransformOrigin="0.5,0.5" MinWidth="300" MinHeight="300"   >
+                    <TabItem Header="Настройки окна">
+                    </TabItem>
+                    <TabItem Header="Настройки выгрузки данных" ></TabItem>
+                    <TabItem Header="Настройки базы данных" ></TabItem>
+                    <TabItem Header="Настройки плитки">
+                        <ListPage:TileSettingsUserControl></ListPage:TileSettingsUserControl>
+                    </TabItem>
+                    <TabItem Header="Настройки положения каналов">
+                        <Grid>
+                            <ListView ItemsSource="{Binding NestedViewModel }">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Настройки каналов" Height="24" Margin="-2,-2,-0.2,-2" VerticalAlignment="Bottom" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <GroupBox Header="Каналы с обработкой" Grid.Column="0"   Margin="2" >
+                                <StackPanel>
+                                    <ListView ItemsSource="{Binding NestedViewModel }">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ListPage1:RowChannelSettings></ListPage1:RowChannelSettings>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <Button VerticalAlignment="Top" Margin="2" Height="20" Command="{Binding}">Добавить новый</Button>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Каналы только для просмотра" Grid.Column="1">
+                                <StackPanel>
+                                    <Grid>
+
+                                    </Grid>
+                                    <Button VerticalAlignment="Top" Margin="2" Height="20">Добавить новый</Button>
+                                </StackPanel>
+                            </GroupBox>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Настройки сохранить"></TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="О программе"></TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
